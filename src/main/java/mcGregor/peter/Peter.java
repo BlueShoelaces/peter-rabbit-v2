@@ -2,15 +2,21 @@ package mcGregor.peter;
 
 import java.util.ArrayList;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 import mcGregor.enemy.Enemy;
 import mcGregor.io.KeyboardInput;
 import mcGregor.weapon.CuddlyPaws;
 import mcGregor.weapon.Weapon;
 
+@NoArgsConstructor
+@AllArgsConstructor
+@Data
 public class Peter {
 
 	private Weapon currentWeapon;
-	private final ArrayList<Weapon> weapons;
+	private ArrayList<Weapon> weapons;
 
 	public Peter(ArrayList<Weapon> weapons) {
 

@@ -2,6 +2,9 @@ package mcGregor.application;
 
 import java.util.ArrayList;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 import mcGregor.enemy.Enemy;
 import mcGregor.io.KeyboardInput;
 import mcGregor.peter.Peter;
@@ -10,22 +13,24 @@ import mcGregor.weapon.CuddlyPaws;
 import mcGregor.weapon.Sword;
 import mcGregor.weapon.Weapon;
 
+@Data
 public class Application {
 
 	private static Application INSTANCE;
 
-	private final Peter peter;
-	private final Enemy enemy;
+	private Peter peter;
+	private Enemy enemy;
 
 	private Application() {
-		final ArrayList<Weapon> weapons = new ArrayList<Weapon>();
-		weapons.add(0, new CuddlyPaws());
-		weapons.add(new Sword());
-		weapons.add(new BattleAxe());
-
-		this.peter = new Peter(weapons);
-
-		this.enemy = new Enemy("Mr. McGregor", 100);
+//		final ArrayList<Weapon> weapons = new ArrayList<>();
+//		weapons.add(0, new CuddlyPaws());
+//		weapons.add(new Sword());
+//		weapons.add(new BattleAxe());
+//
+//		this.peter = new Peter(weapons);
+		this.peter = new Peter();
+//
+//		this.enemy = new Enemy("Mr. McGregor", 100);
 	}
 
 	public static Application singleton() {
@@ -38,25 +43,25 @@ public class Application {
 
 	public void run() {
 
-		System.out.println("Oh, no! It's " + this.enemy.getName() + "!");
-		System.out.println();
-
-		int menuOption;
-		boolean keepGoing = true;
-
-		do {
-			displayMenuOptions();
-
-			menuOption = KeyboardInput.singleton().nextInt();
-			KeyboardInput.singleton().nextLine();
-
-			System.out.println();
-
-			keepGoing = determineWhetherToContinue(menuOption, keepGoing);
-		} while (keepGoing);
-
-		System.out.println("Peter ran away!");
-		KeyboardInput.singleton().close();
+//		System.out.println("Oh, no! It's " + this.enemy.getName() + "!");
+//		System.out.println();
+//
+//		int menuOption;
+//		boolean keepGoing = true;
+//
+//		do {
+//			displayMenuOptions();
+//
+//			menuOption = KeyboardInput.singleton().nextInt();
+//			KeyboardInput.singleton().nextLine();
+//
+//			System.out.println();
+//
+//			keepGoing = determineWhetherToContinue(menuOption, keepGoing);
+//		} while (keepGoing);
+//
+//		System.out.println("Peter ran away!");
+//		KeyboardInput.singleton().close();
 	}
 
 	private void makePeterFight() {
