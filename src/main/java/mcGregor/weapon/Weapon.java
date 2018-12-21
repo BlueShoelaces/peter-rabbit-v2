@@ -1,7 +1,13 @@
 package mcGregor.weapon;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 import mcGregor.enemy.Enemy;
 
+@AllArgsConstructor
+@NoArgsConstructor
+@Data
 public abstract class Weapon {
 
 	private final double ATTACK_STRENGTH_LOWER_BOUND_FACTOR = 0.75;

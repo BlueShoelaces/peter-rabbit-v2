@@ -1,8 +1,10 @@
 package mcGregor.peter;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import mcGregor.enemy.Enemy;
@@ -13,10 +15,11 @@ import mcGregor.weapon.Weapon;
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
+@Builder
 public class Peter {
 
 	private Weapon currentWeapon;
-	private ArrayList<Weapon> weapons;
+	private List<Weapon> weapons;
 
 	public Peter(ArrayList<Weapon> weapons) {
 
